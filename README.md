@@ -3,7 +3,7 @@
 Your task is to create a React application that will consume data from the SpaceX public API. The application must retrieve historic and future SpaceX launches and present them in a list view.
 Provided in this pack are a copy of the designs as well as all of the assets you will need. Use the create-react-app CLI tool to generate a new react project and feel free to use any 3rd party packages that will assist in your development.
 
-Designs are available from: [https://sketch.cloud/s/yyv1b/agmoaZP](https://sketch.cloud/s/yyv1b/agmoaZP)
+Designs are available from: [https://www.sketch.com/s/09d14b3c-a48c-478a-9d4e-94cf16d6d67f/a/zx7v7Kb](https://www.sketch.com/s/09d14b3c-a48c-478a-9d4e-94cf16d6d67f/a/zx7v7Kb)
 
 The API documentation is available from:
 Postman - [https://docs.spacexdata.com](https://docs.spacexdata.com/)
