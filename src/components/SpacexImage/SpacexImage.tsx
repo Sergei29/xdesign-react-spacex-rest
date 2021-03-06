@@ -16,7 +16,7 @@ const SpacexImage: React.FC = () => {
         <source media="(min-width:1440px)" srcSet={LaunchImageLg} />
         <source media="(min-width:1024px)" srcSet={LaunchImageMd} />
         <source media="(min-width:768px)" srcSet={LaunchImageSm} />
-        <img src={LaunchImageSm} alt="launch image" />
+        <img src={LaunchImageSm} alt="spacex launch" />
       </PictureContainer>
     </SpacexImageContainer>
   );
