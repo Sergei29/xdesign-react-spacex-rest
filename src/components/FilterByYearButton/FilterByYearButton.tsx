@@ -34,20 +34,17 @@ const FilterByYearButton: React.FC<Props> = ({
   };
 
   return (
-    <SelectByYearContainer>
-      <select
-        id="years"
-        onChange={funcHandleChange}
-        value={nIntSelectedYear ? nIntSelectedYear : "Filter by year"}
-        style={{ width: "100%" }}
-      >
-        <option value={0}>Filter by year</option>
-        {arrYears.map((intYear) => (
-          <option key={intYear} value={intYear}>
-            {intYear}
-          </option>
-        ))}
-      </select>
+    <SelectByYearContainer
+      id="years"
+      onChange={funcHandleChange}
+      value={nIntSelectedYear ? nIntSelectedYear : "Filter by year"}
+    >
+      <option value={0}>Filter by year</option>
+      {arrYears.map((intYear) => (
+        <option key={intYear} value={intYear}>
+          {intYear}
+        </option>
+      ))}
     </SelectByYearContainer>
   );
 };

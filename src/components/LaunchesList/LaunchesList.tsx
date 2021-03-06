@@ -5,7 +5,12 @@ import FilterByYearButton from "../FilterByYearButton";
 import SortLaunchesButton from "../SortLaunchesButton";
 import LaunchItem from "../LaunchItem";
 // style:
-import { LaunchesListContainer, ControlsContainer } from "./style";
+import {
+  LaunchesListContainer,
+  ControlsContainer,
+  Loader,
+  Error,
+} from "./style";
 
 /**
  * @description Spacex launches list
@@ -28,8 +33,8 @@ const LaunchesList: React.FC = () => {
    * @returns {JSX} markup
    */
   const renderLaunchesList = () => {
-    if (bLoading) return <h4>Loading...</h4>;
-    if (nstrError) return <h4>Error: {nstrError}</h4>;
+    if (bLoading) return <Loader>Loading...</Loader>;
+    if (nstrError) return <Error>Error: {nstrError}</Error>;
     return arrLaunches.map((objLaunch, intIndex) => (
       <LaunchItem
         key={objLaunch["mission_name"] + objLaunch["launch_date_utc"]}

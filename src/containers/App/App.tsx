@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import {} from "module";
+import { ThemeProvider } from "styled-components";
 // components:
 import Header from "../Header";
 import Main from "../Main";
@@ -10,6 +10,8 @@ import RefetchLaunchesButton from "../../components/RefetchLaunchesButton";
 import PageNotFound from "../../pages/PageNotFound";
 import LaunchesPage from "../../pages/LaunchesPage";
 // style:
+import GlobalStyle from "../../GlobalStyle/GlobalStyle";
+import { themeLight } from "../../theme/theme";
 import { AppContainer } from "./style";
 
 /**
@@ -18,21 +20,24 @@ import { AppContainer } from "./style";
  */
 const App = () => {
   return (
-    <AppContainer>
-      <Header>
-        <SpacexLogo />
-        <RefetchLaunchesButton />
-      </Header>
-      <Main>
-        <Switch>
-          <Route path="/" exact component={LaunchesPage} />
-          <Route exact component={PageNotFound} />
-        </Switch>
-      </Main>
-      <Footer>
-        <small>footer disclaimer etc</small>.
-      </Footer>
-    </AppContainer>
+    <ThemeProvider theme={themeLight}>
+      <AppContainer>
+        <GlobalStyle />
+        <Header>
+          <SpacexLogo />
+          <RefetchLaunchesButton />
+        </Header>
+        <Main>
+          <Switch>
+            <Route path="/" exact component={LaunchesPage} />
+            <Route exact component={PageNotFound} />
+          </Switch>
+        </Main>
+        <Footer>
+          <small>This page is created for training purposes only.</small>.
+        </Footer>
+      </AppContainer>
+    </ThemeProvider>
   );
 };
 
