@@ -1,3 +1,3 @@
 import styled from "styled-components";
 
-export const RefetchLaunchesButtonContainer = styled.button``;
+export const RefetchLaunchesButtonContainer = styled.div``;

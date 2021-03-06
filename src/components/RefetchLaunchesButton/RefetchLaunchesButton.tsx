@@ -1,4 +1,5 @@
 import React from "react";
+import useFetchLaunches from "../../hooks/useFetchLaunches";
 // style:
 import { RefetchLaunchesButtonContainer } from "./style";
 
@@ -7,8 +8,11 @@ import { RefetchLaunchesButtonContainer } from "./style";
  * @returns {JSX} component markup, refetch lauches list button
  */
 const RefetchLaunchesButton = () => {
+  const { funcRefetchLaunchesList } = useFetchLaunches();
   return (
-    <RefetchLaunchesButtonContainer>Reload data</RefetchLaunchesButtonContainer>
+    <RefetchLaunchesButtonContainer>
+      <button onClick={funcRefetchLaunchesList}>Reload data</button>
+    </RefetchLaunchesButtonContainer>
   );
 };
 
