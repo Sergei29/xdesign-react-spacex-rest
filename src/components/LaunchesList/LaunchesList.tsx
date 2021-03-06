@@ -3,9 +3,17 @@ import useFetchLaunches from "../../hooks/useFetchLaunches";
 // style:
 import { LaunchesListContainer, ControlsContainer } from "./style";
 
-const LaunchesList = () => {
+/**
+ * @description Spacex launches list
+ * @returns {JSX} component markup
+ */
+const LaunchesList: React.FC = () => {
   const { bLoading, arrLaunches, arrYears, nstrError } = useFetchLaunches();
 
+  /**
+   * @description generates launches items or fetching status
+   * @returns {JSX} markup
+   */
   const renderLaunchesList = () => {
     if (bLoading) return <h4>Loading</h4>;
     if (nstrError) return <h4>Error: {nstrError}</h4>;
