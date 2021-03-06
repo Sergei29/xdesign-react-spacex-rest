@@ -36,8 +36,8 @@ const LaunchItem: React.FC<Props> = ({
       <LaunchIndex>{`#${intIndex}`}</LaunchIndex>
       <MissionName>{strMissionName}</MissionName>
       <LaunchDateAndRocketName>
-        <div>{strFormattedDate}</div>
-        <div>{strRocketName}</div>
+        <p className="date">{strFormattedDate}</p>
+        <p className="name">{strRocketName}</p>
       </LaunchDateAndRocketName>
     </LaunchItemContainer>
   );
