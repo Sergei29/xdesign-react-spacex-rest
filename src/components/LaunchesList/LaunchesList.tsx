@@ -2,6 +2,8 @@ import React from "react";
 import useFetchLaunches from "../../hooks/useFetchLaunches";
 // components:
 import FilterByYearButton from "../FilterByYearButton";
+import SortLaunchesButton from "../SortLaunchesButton";
+import LaunchItem from "../LaunchItem";
 // style:
 import { LaunchesListContainer, ControlsContainer } from "./style";
 
@@ -26,31 +28,32 @@ const LaunchesList: React.FC = () => {
    * @returns {JSX} markup
    */
   const renderLaunchesList = () => {
-    if (bLoading) return <h4>Loading</h4>;
+    if (bLoading) return <h4>Loading...</h4>;
     if (nstrError) return <h4>Error: {nstrError}</h4>;
-    return arrLaunches.map((objLaunch) => (
-      <div key={objLaunch["mission_name"] + objLaunch["launch_date_utc"]}>
-        <p>{objLaunch["mission_name"]}</p>
-        <p>{objLaunch["launch_year"]}</p>
-      </div>
+    return arrLaunches.map((objLaunch, intIndex) => (
+      <LaunchItem
+        key={objLaunch["mission_name"] + objLaunch["launch_date_utc"]}
+        intIndex={intIndex + 1}
+        strMissionName={objLaunch["mission_name"]}
+        strRocketName={objLaunch["rocket"]["rocket_name"]}
+        strLaunchDateUtc={objLaunch["launch_date_utc"]}
+      />
     ));
   };
 
   return (
     <LaunchesListContainer>
       <ControlsContainer>
-        {" "}
         <FilterByYearButton
           arrYears={arrYears}
           nIntSelectedYear={nIntYearFilterBy}
           funcHandleSelect={funcApplyFilterByYear}
         />
-        <button
-          onClick={funcToggleSortDirection}
-          disabled={nIntYearFilterBy !== null}
-        >
-          sort {bDescending ? "Asc" : "Desc"}
-        </button>{" "}
+        <SortLaunchesButton
+          bDisabled={nIntYearFilterBy !== null}
+          bDescending={bDescending}
+          funcHandleClick={funcToggleSortDirection}
+        />
       </ControlsContainer>
       {renderLaunchesList()}
     </LaunchesListContainer>
