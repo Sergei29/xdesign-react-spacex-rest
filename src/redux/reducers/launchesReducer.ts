@@ -5,6 +5,7 @@ export const initialLaunchesState: Readonly<LaunchesStateType> = {
   bLoading: false,
   nstrError: null,
   arrLaunches: [],
+  arrYears: [],
 };
 
 /**

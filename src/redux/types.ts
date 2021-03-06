@@ -2,6 +2,7 @@ export type LaunchesStateType = {
   bLoading: boolean;
   nstrError: null | string;
   arrLaunches: Record<string, any>[];
+  arrYears: number[];
 };
 
 export type AppStateType = {
