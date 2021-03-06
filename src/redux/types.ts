@@ -18,7 +18,7 @@ export type ActionType = {
 };
 
 export type LaunchesReducerType = (
-  objState: LaunchesStateType,
+  objState: LaunchesStateType | undefined,
   objAction: ActionType
 ) => LaunchesStateType;
 

@@ -1,6 +1,6 @@
-import EnumActionTypes from "../actions/enumActionTypes";
-import { LaunchesStateType, LaunchesReducerType } from "../types";
-import funcGetYears from "../../utils/funcGetYears/funcGetYears";
+import EnumActionTypes from "../../actions/enumActionTypes";
+import { LaunchesStateType, LaunchesReducerType } from "../../types";
+import funcGetYears from "../../../utils/funcGetYears/funcGetYears";
 
 const {
   FETCH_LAUNCH_LIST_START,
@@ -17,7 +17,7 @@ export const initialLaunchesState: Readonly<LaunchesStateType> = {
 
 /**
  * @description store reducer for lauches
- * @param {Object} objState launches state
+ * @param {Object|undefined} objState launches state
  * @param {Object} objAction action fired
  * @returns {Object} updated launches state
  */
