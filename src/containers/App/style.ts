@@ -5,4 +5,5 @@ export const AppContainer = styled.div`
   margin: 0 auto;
   position: relative;
   min-height: 100vh;
+  padding-bottom: 0.25rem;
 `;
