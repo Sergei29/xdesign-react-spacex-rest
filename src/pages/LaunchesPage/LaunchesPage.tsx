@@ -1,4 +1,8 @@
 import React from "react";
+// components:
+import LaunchesList from "../../components/LaunchesList";
+import SpacexImage from "../../components/SpacexImage";
+// style:
 import { LaunchesPageContainer } from "./style";
 
 /**
@@ -8,15 +12,8 @@ import { LaunchesPageContainer } from "./style";
 const LaunchesPage: React.FC = () => {
   return (
     <LaunchesPageContainer>
-      <div>hero image</div>
-      <div>
-        <div>
-          {" "}
-          <span>filter by year</span>
-          <span>sort asc/desc</span>{" "}
-        </div>
-        <div>list of launches</div>
-      </div>
+      <SpacexImage />
+      <LaunchesList />
     </LaunchesPageContainer>
   );
 };
