@@ -13,7 +13,10 @@ export const initialLaunchesState: Readonly<LaunchesStateType> = {
  * @param {Object} objAction action fired
  * @returns {Object} updated launches state
  */
-const launchesReducer: LaunchesReducerType = (objState, objAction) => {
+const launchesReducer: LaunchesReducerType = (
+  objState = initialLaunchesState,
+  objAction
+) => {
   switch (objAction.type) {
     default:
       return objState;
