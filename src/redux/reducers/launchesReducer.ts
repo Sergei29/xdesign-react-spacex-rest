@@ -1,5 +1,12 @@
 import EnumActionTypes from "../actions/enumActionTypes";
 import { LaunchesStateType, LaunchesReducerType } from "../types";
+import funcGetYears from "../../utils/funcGetYears/funcGetYears";
+
+const {
+  FETCH_LAUNCH_LIST_START,
+  FETCH_LAUNCH_LIST_SUCCESS,
+  FETCH_LAUNCH_LIST_ERROR,
+} = EnumActionTypes;
 
 export const initialLaunchesState: Readonly<LaunchesStateType> = {
   bLoading: false,
@@ -19,6 +26,25 @@ const launchesReducer: LaunchesReducerType = (
   objAction
 ) => {
   switch (objAction.type) {
+    case FETCH_LAUNCH_LIST_START:
+      return {
+        ...objState,
+        bLoading: true,
+      };
+    case FETCH_LAUNCH_LIST_SUCCESS:
+      return {
+        ...objState,
+        bLoading: false,
+        nstrError: null,
+        arrLaunches: objAction.payload as Record<string, any>[],
+        arrYears: funcGetYears(objAction.payload as Record<string, any>[]),
+      };
+    case FETCH_LAUNCH_LIST_ERROR:
+      return {
+        ...objState,
+        bLoading: false,
+        nstrError: objAction.payload as string,
+      };
     default:
       return objState;
   }

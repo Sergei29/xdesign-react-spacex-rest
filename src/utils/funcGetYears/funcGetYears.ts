@@ -1,0 +1,14 @@
+/**
+ * @description util, aggregates the launch years from the list
+ * @param {Array} arrLaunches launches list
+ * @returns {Array} array of launched years
+ */
+const funcGetYears = (arrLaunches: Record<string, any>[]): number[] => {
+  const arrYearsWithDuplicates = arrLaunches.map((objLaunch) =>
+    parseInt(objLaunch["launch_year"])
+  );
+
+  return [...(new Set(arrYearsWithDuplicates) as any)];
+};
+
+export default funcGetYears;
