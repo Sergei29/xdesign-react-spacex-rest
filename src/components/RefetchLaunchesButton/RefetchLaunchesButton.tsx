@@ -10,8 +10,8 @@ import { RefetchLaunchesButtonContainer } from "./style";
 const RefetchLaunchesButton = () => {
   const { funcRefetchLaunchesList } = useFetchLaunches();
   return (
-    <RefetchLaunchesButtonContainer>
-      <button onClick={funcRefetchLaunchesList}>Reload data</button>
+    <RefetchLaunchesButtonContainer onClick={funcRefetchLaunchesList}>
+      Reload data
     </RefetchLaunchesButtonContainer>
   );
 };
