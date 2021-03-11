@@ -1,11 +1,6 @@
 import React from "react";
 import axios from "axios";
-import {
-  renderHook,
-  act,
-  RenderResult,
-  WaitForNextUpdate,
-} from "@testing-library/react-hooks";
+import { renderHook } from "@testing-library/react-hooks";
 import { Provider } from "react-redux";
 import objApplicationStore from "../../redux/store/store";
 import useFetchLaunches from "./useFetchLaunches";
@@ -14,7 +9,6 @@ import {
   arrMockLaunches,
   arrMockYears,
 } from "./testData";
-import { arrLaunchesPayload } from "../../redux/reducers/launchesReducer/testData";
 
 type Props = {
   children: React.ReactNode;
@@ -34,9 +28,7 @@ describe("custom hook useFetchLaunches", () => {
   });
 
   it("should fetch data then set loading to false", async () => {
-    jest
-      .spyOn(axios, "get")
-      .mockResolvedValueOnce({ data: arrLaunchesPayload });
+    jest.spyOn(axios, "get").mockResolvedValueOnce({ data: arrMockLaunches });
     const { result, waitForNextUpdate } = renderHook(() => useFetchLaunches(), {
       wrapper,
     });
