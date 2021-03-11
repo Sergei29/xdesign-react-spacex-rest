@@ -2,12 +2,13 @@ import { useEffect, useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { actionFetchLaunchesList } from "../../redux/actions/actionsGenerators";
 import { AppStateType, LaunchesStateType } from "../../redux/types";
+import { HookReturnType } from "./types";
 
 /**
  * @description custom hook, get launches list
  * @returns {Object} fetch status, refetch function and launches data
  */
-const useFetchLaunches = () => {
+const useFetchLaunches = (): HookReturnType => {
   const [bDescending, setbDescending] = useState<boolean>(false);
   const [nIntYearFilterBy, setnIntYearFilterBy] = useState<number | null>(null);
 
